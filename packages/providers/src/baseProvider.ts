@@ -28,6 +28,7 @@ import {
   GetSignatureParams,
   NetworkType,
   GetManagerSyncStatusParams,
+  TSendWalletConfigOptionsParams,
 } from '@portkey/provider-types';
 import { isNotificationEvents, isMethodsBase, isMethodsUnimplemented } from './utils';
 import isEqual from 'lodash/isEqual';
@@ -177,6 +178,11 @@ export default abstract class BaseProvider extends EventEmitter implements IInte
    */
   public async request(params: { method: typeof MethodsBase.ACCOUNTS }): Promise<Accounts>;
   public async request(params: { method: typeof MethodsBase.CHAIN_ID }): Promise<ChainIds>;
+  public async request(params: {
+    method: typeof MethodsBase.SEND_WALLET_CONFIG_OPTIONS;
+    payload: TSendWalletConfigOptionsParams;
+  }): Promise<boolean>;
+
   public async request(params: { method: typeof MethodsBase.CHAIN_IDS }): Promise<ChainIds>;
   public async request(params: { method: typeof MethodsBase.CHAINS_INFO }): Promise<ChainsInfo>;
   public async request(params: { method: typeof MethodsBase.REQUEST_ACCOUNTS }): Promise<Accounts>;

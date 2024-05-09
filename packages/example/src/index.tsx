@@ -444,6 +444,20 @@ ${Date.now()}`;
         }}>
         linkDapp
       </button>
+      <button
+        onClick={async () => {
+          try {
+            const result = await provider.request({
+              method: MethodsBase.SEND_WALLET_CONFIG_OPTIONS,
+              payload: { showBatchApproveToken: true },
+            });
+            console.log('showBatchApproveToken', result);
+          } catch (error) {
+            alert(error.message);
+          }
+        }}>
+        setAllowBatchApprove
+      </button>
     </div>
   );
 }
