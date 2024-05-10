@@ -155,10 +155,10 @@ export interface IInternalProvider extends IProvider {
   addListener(event: DappEvents, listener: (...args: any[]) => void): this;
 }
 
-export type TSendWalletConfigOptionsType = 'showBatchApproveToken';
+export type TWalletConfigOptionsType = 'showBatchApproveToken';
 
-export type TSendWalletConfigOptionsParams = {
-  [key in TSendWalletConfigOptionsType]?: boolean;
+export type TSetWalletConfigOptionsParams = {
+  [key in TWalletConfigOptionsType]?: boolean;
 };
 
 export interface SendTransactionParams {

@@ -448,7 +448,7 @@ ${Date.now()}`;
         onClick={async () => {
           try {
             const result = await provider.request({
-              method: MethodsBase.SEND_WALLET_CONFIG_OPTIONS,
+              method: MethodsBase.SET_WALLET_CONFIG_OPTIONS,
               payload: { showBatchApproveToken: true },
             });
             console.log('showBatchApproveToken', result);
